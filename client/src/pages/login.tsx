@@ -6,7 +6,6 @@ import { CredentialResponse } from "../interfaces/google";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
-
   const GoogleButton = (): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
 
@@ -43,6 +42,7 @@ export const Login: React.FC = () => {
       component="div"
       sx={{backgroundColor:'#FCFCFC'}}
     >
+     
       <Container
         component="main"
         maxWidth="xs"
@@ -53,6 +53,9 @@ export const Login: React.FC = () => {
           height: "100vh",
         }}
       >
+        <Box>
+       
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -63,8 +66,13 @@ export const Login: React.FC = () => {
         >
           <div>
             <img src={yariga} alt="ElHmiza" />
+
           </div>
           <Box mt={4}>
+          <div>
+            <h2>hahaha</h2>
+            {/* <button>LOGIN</button> */}
+          </div>
             <GoogleButton />
           </Box>
         </Box>
@@ -72,3 +80,5 @@ export const Login: React.FC = () => {
     </Box>
   );
 };
+
+export default Login;

@@ -21,7 +21,7 @@ app.use('/api/v1/properties',propertyRouter);
 
 const startServer=async ()=>{
     try{
-            connectDb(process.env.URL_MONGOOSE);
+            connectDb(process.env.URL_MONGOOSE,{ useNewUrlParser: true });
             app.listen(process.env.PORT,()=>console.log("Server Started on http://localhost:8080"))
     }
     catch(error){

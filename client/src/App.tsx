@@ -17,6 +17,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { ColorModeContextProvider } from "contexts";
 import { Title, Sider, Layout, Header } from "components/layout";
 import { Login,Home,Agents,MyProfile,PropertyDetails,AllProperties,CreateProperty,AgentProfile,EditProperty } from "pages";
+// import {CustomReadyPage} from 'pages'
 
 import { CredentialResponse } from "interfaces/google";
 import { parseJwt } from "utils/parse-jwt";
@@ -105,11 +106,14 @@ function App() {
   };
 
   return (
+    <>
+    
     <ColorModeContextProvider>
       <CssBaseline />
       <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
       <RefineSnackbarProvider>
         <Refine
+                // ReadyPage={CustomReadyPage}
               dataProvider={dataProvider("http://localhost:8080/api/v1")}
               notificationProvider={notificationProvider}
           ReadyPage={ReadyPage}
@@ -163,6 +167,7 @@ function App() {
         />
       </RefineSnackbarProvider>
     </ColorModeContextProvider>
+    </>
   );
 }
 
